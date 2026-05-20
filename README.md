@@ -989,8 +989,8 @@ Never commit `.env.local` to GitHub.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/9jadevo/kampus-konnect-ai.git
-cd kampus-konnect-ai
+git clone https://github.com/9jadevo/kampus_konnect_ai.git
+cd kampus_konnect_ai
 ```
 
 ### 2. Install dependencies
