@@ -4,6 +4,7 @@ import { buildProjectIdeasPrompt } from "@/lib/ai/prompts";
 import { ProjectIdeasBodySchema } from "@/lib/validators/profile";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {

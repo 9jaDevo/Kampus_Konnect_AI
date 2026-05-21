@@ -1,5 +1,7 @@
 # Kampus Konnect AI
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9jaDevo%2FKampus_Konnect_AI&env=GEMINI_API_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,SUPABASE_SERVICE_ROLE_KEY,NEXT_PUBLIC_APP_URL&envDescription=API%20keys%20required%20for%20Kampus%20Konnect%20AI&project-name=kampus-konnect-ai&repository-name=Kampus_Konnect_AI)
+
 **Kampus Konnect AI** is an AI-powered student connection and collaboration platform built to help students find the right teammates, mentors, study partners, and project collaborators based on their skills, goals, interests, experience level, availability, and project needs.
 
 The project is designed for the **Connect N Code Hackathon** theme of building technology that helps people connect. It uses AI not as a gimmick, but as a decision-support layer that makes student collaboration smarter, faster, more inclusive, and more productive.
@@ -986,36 +988,66 @@ Never commit `.env.local` to GitHub.
 
 ## Installation and Setup
 
-### 1. Clone the repository
+### Local development
 
 ```bash
-git clone https://github.com/9jadevo/kampus_konnect_ai.git
-cd kampus_konnect_ai
-```
+# 1. Clone
+git clone https://github.com/9jaDevo/Kampus_Konnect_AI.git
+cd Kampus_Konnect_AI
 
-### 2. Install dependencies
+# 2. Install
+npm ci
 
-```bash
-npm install
-```
+# 3. Environment variables
+cp .env.example .env.local
+# then edit .env.local with your real keys
 
-### 3. Add environment variables
-
-Create `.env.local` and add the required keys.
-
-### 4. Run development server
-
-```bash
+# 4. Run
 npm run dev
+# → http://localhost:3000
 ```
 
-### 5. Open app
+> **Note:** The app runs fully on demo/stub data without any API keys. Add `GEMINI_API_KEY` for live AI features.
 
-Visit:
+---
 
-```txt
-http://localhost:3000
-```
+## Deploy to Vercel (Recommended)
+
+Vercel is the official hosting platform for Next.js and the best choice for this project.
+
+### One-click deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9jaDevo%2FKampus_Konnect_AI&env=GEMINI_API_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,SUPABASE_SERVICE_ROLE_KEY,NEXT_PUBLIC_APP_URL&envDescription=API%20keys%20required%20for%20Kampus%20Konnect%20AI&project-name=kampus-konnect-ai)
+
+### Manual deploy steps
+
+1. Push the repository to GitHub (already done at [github.com/9jaDevo/Kampus_Konnect_AI](https://github.com/9jaDevo/Kampus_Konnect_AI))
+2. Go to [vercel.com](https://vercel.com) → **New Project** → import the repo
+3. Vercel auto-detects Next.js — leave all build settings as default
+4. Under **Environment Variables**, add:
+
+| Variable | Where to get it |
+|---|---|
+| `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/app/apikey) |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project → Settings → API |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase project → Settings → API |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase project → Settings → API (server-only) |
+| `NEXT_PUBLIC_APP_URL` | Your Vercel project URL, e.g. `https://kampus-konnect-ai.vercel.app` |
+
+5. Click **Deploy** — live in ~60 seconds
+
+> **Supabase OAuth redirect:** In your Supabase dashboard → Authentication → URL Configuration, add your Vercel URL as a redirect URL: `https://your-project.vercel.app/**`
+
+### Why Vercel over Netlify or Render?
+
+| Feature | Vercel | Netlify | Render |
+|---|---|---|---|
+| Next.js native support | ✅ First-party | ⚠️ Plugin-based | ❌ Manual config |
+| App Router SSR | ✅ Full | ⚠️ Partial | ❌ Requires adapter |
+| API routes / serverless | ✅ Zero config | ✅ Works | ✅ Works |
+| Free tier | ✅ Generous | ✅ Good | ⚠️ Limited |
+| Preview deployments | ✅ Per-PR | ✅ Per-PR | ❌ Paid |
+| Edge network | ✅ Global | ✅ Global | ❌ Single region |
 
 ---
 

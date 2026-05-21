@@ -31,7 +31,10 @@ export const metadata: Metadata = {
     "Gemini AI",
   ],
   authors: [{ name: "Kampus Konnect AI" }],
-  metadataBase: new URL("https://kampuskonnect.ai"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL ??
+      (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+  ),
   openGraph: {
     title: "Kampus Konnect AI — Find your perfect student team",
     description:
@@ -39,11 +42,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Kampus Konnect AI",
+    images: [{ url: "/KK_Logo.png", width: 512, height: 512, alt: "Kampus Konnect AI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kampus Konnect AI",
     description: "Find your perfect student team with AI.",
+    images: ["/KK_Logo.png"],
   },
   icons: {
     icon: "/KK_Favicon.png",
