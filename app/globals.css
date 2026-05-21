@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 60% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 50% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 30% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 20% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 271 91% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 25% 18%;
+    --input: 240 25% 18%;
+    --ring: 239 84% 67%;
+
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    background-color: #07071a;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(6, 207, 255, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Subtle film grain overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  ::selection {
+    background-color: rgba(99, 102, 241, 0.5);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6366f1, #8b5cf6);
+    border-radius: 10px;
+    border: 2px solid #07071a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #818cf8, #a78bfa);
+  }
+}
+
+@layer components {
+  /* Liquid Glass — primary surface treatment */
+  .glass {
+    @apply bg-white/[0.04] border border-white/[0.08] backdrop-blur-2xl;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+      0 8px 32px -8px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-strong {
+    @apply bg-white/[0.06] border border-white/[0.1] backdrop-blur-3xl;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 12px 40px -8px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-subtle {
+    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl;
+  }
+
+  .glow-indigo {
+    box-shadow:
+      0 0 0 1px rgba(99, 102, 241, 0.3),
+      0 0 24px rgba(99, 102, 241, 0.35),
+      0 0 60px rgba(99, 102, 241, 0.15);
+  }
+
+  .glow-cyan {
+    box-shadow:
+      0 0 0 1px rgba(6, 207, 255, 0.3),
+      0 0 24px rgba(6, 207, 255, 0.35),
+      0 0 60px rgba(6, 207, 255, 0.15);
+  }
+
+  .glow-violet {
+    box-shadow:
+      0 0 0 1px rgba(139, 92, 246, 0.3),
+      0 0 24px rgba(139, 92, 246, 0.35),
+      0 0 60px rgba(139, 92, 246, 0.15);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      #06cfff 0%,
+      #6366f1 50%,
+      #8b5cf6 100%
+    );
+  }
+
+  .text-gradient-shift {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      #06cfff,
+      #6366f1,
+      #8b5cf6,
+      #6366f1,
+      #06cfff
+    );
+    background-size: 200% auto;
+    animation: gradient-shift 6s linear infinite;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: rgba(7, 7, 26, 0.6);
+    background-clip: padding-box;
+    border: 1px solid transparent;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #06cfff, #6366f1, #8b5cf6);
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.04) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+}
+
+@layer utilities {
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .mask-fade-top {
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}

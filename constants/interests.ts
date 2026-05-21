@@ -1,0 +1,26 @@
+export const INTERESTS = [
+  "Education",
+  "HealthTech",
+  "FinTech",
+  "Social Impact",
+  "Climate",
+  "Productivity",
+  "Student Life",
+  "AI Tools",
+  "Scholarships",
+  "Community",
+  "Open Source",
+  "Gaming",
+  "E-commerce",
+  "Music",
+  "Sports",
+  "Travel",
+  "Mental Health",
+  "Sustainability",
+  "Robotics",
+  "Blockchain",
+  "AR/VR",
+  "Creator Economy",
+] as const;
+
+export type Interest = (typeof INTERESTS)[number];

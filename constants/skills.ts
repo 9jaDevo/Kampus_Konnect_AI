@@ -1,0 +1,27 @@
+export const SKILLS = [
+  "Frontend Development",
+  "Backend Development",
+  "Mobile Development",
+  "UI/UX Design",
+  "Product Management",
+  "Data Analysis",
+  "AI/ML",
+  "Cybersecurity",
+  "Content Writing",
+  "Pitching",
+  "Research",
+  "Database Design",
+  "API Integration",
+  "DevOps",
+  "Graphic Design",
+  "Video Editing",
+  "Public Speaking",
+  "Project Management",
+  "Marketing",
+  "Photography",
+  "Firebase",
+  "Supabase",
+  "Cloud Computing",
+] as const;
+
+export type Skill = (typeof SKILLS)[number];
