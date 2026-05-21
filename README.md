@@ -2,9 +2,9 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9jaDevo%2FKampus_Konnect_AI&env=GEMINI_API_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,SUPABASE_SERVICE_ROLE_KEY,NEXT_PUBLIC_APP_URL&envDescription=API%20keys%20required%20for%20Kampus%20Konnect%20AI&project-name=kampus-konnect-ai&repository-name=Kampus_Konnect_AI)
 
-**Kampus Konnect AI** is an AI-powered student connection and collaboration platform built to help students find the right teammates, mentors, study partners, and project collaborators based on their skills, goals, interests, experience level, availability, and project needs.
+**Kampus Konnect AI** is an AI-powered platform that helps students find the right teammates, mentors, study partners, and project collaborators based on their skills, goals, interests, availability, and project needs. 
 
-The project is designed for the **Connect N Code Hackathon** theme of building technology that helps people connect. It uses AI not as a gimmick, but as a decision-support layer that makes student collaboration smarter, faster, more inclusive, and more productive.
+Using AI to interpret student profiles and generate smart recommendations, the platform turns connection into an intentional, guided, and productive process. It moves students from "I need a team" to "I have a plan and people to build with."
 
 ---
 
@@ -18,7 +18,7 @@ The project is designed for the **Connect N Code Hackathon** theme of building t
 - [Key Use Cases](#key-use-cases)
 - [Core Features](#core-features)
 - [AI Features Powered by Gemini API](#ai-features-powered-by-gemini-api)
-- [Hackathon Judging Alignment](#hackathon-judging-alignment)
+- [Design & Technical Highlights](#design--technical-highlights)
 - [Recommended Tech Stack](#recommended-tech-stack)
 - [Product Architecture](#product-architecture)
 - [Application Pages](#application-pages)
@@ -33,8 +33,6 @@ The project is designed for the **Connect N Code Hackathon** theme of building t
 - [Suggested Folder Structure](#suggested-folder-structure)
 - [MVP Scope](#mvp-scope)
 - [Post-MVP Roadmap](#post-mvp-roadmap)
-- [Demo Script](#demo-script)
-- [Devpost Submission Summary](#devpost-submission-summary)
 - [Engineering Principles](#engineering-principles)
 
 ---
@@ -345,49 +343,23 @@ Gemini API should be used for meaningful intelligence across the platform.
 
 ---
 
-## Hackathon Judging Alignment
+## Design & Technical Highlights
 
-### Creativity
+### Architecture
 
-Kampus Konnect AI goes beyond a basic chatbot. It uses AI as a collaboration engine that helps students move from “I need a team” to “I have a plan and people to build with.”
+The platform combines matching logic with AI-generated explanations, turning raw profile data into actionable recommendations.
 
-### Technical Execution
+### AI Integration
 
-The app can demonstrate:
+Gemini powers the decision layer:
 
-- Authentication
-- Profile management
-- Match recommendation logic
-- Gemini API integration
-- Dynamic dashboards
-- Team creation
-- AI-generated plans
+- **Profile interpretation** — Understanding student goals and context
+- **Match explanation** — Why connections are relevant
+- **Project generation** — Suggested ideas based on interests
+- **Collaboration planning** — Team structures and task breakdowns
+- **Communication assistance** — Drafting introductions and presentations
 
-### Gemini API Usage
-
-Gemini is deeply integrated into the product experience.
-
-It is used for:
-
-- Profile interpretation
-- Match explanation
-- Project generation
-- Collaboration planning
-- Pitch generation
-
-### Impact
-
-The project solves a real student problem: finding the right people to learn, build, and grow with.
-
-### Presentation
-
-The demo is easy to understand and visually compelling:
-
-1. Create profile.
-2. Get AI matches.
-3. Create team.
-4. Generate project plan.
-5. Show pitch output.
+---
 
 ---
 
@@ -1284,14 +1256,6 @@ Next steps include real-time chat, mentor verification, school organization tool
 - Number of successful team formations
 - Repeat usage rate
 
-### Hackathon Metrics
-
-- Working prototype completeness
-- Quality of AI integration
-- Clarity of demo
-- Visual polish
-- Real-world relevance
-
 ---
 
 ## Engineering Principles
@@ -1405,4 +1369,18 @@ Kampus Konnect AI is built on a simple belief:
 > Students do not just need more contacts. They need the right connections, the right team, and the right plan to create something meaningful.
 
 This platform turns student networking into intelligent collaboration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
